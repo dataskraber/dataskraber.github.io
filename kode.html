@@ -63,41 +63,47 @@ $( function() {
       }
     });
 
-// DR pressefoto
+
+// FIlm
 
 
-    var searchTerm = $('#keywords').val();
-    var data = { query: ''+searchTerm+'' };
+//    var searchTerm = $('#keywords').val();
+    var data = { titlecontains: ''+searchTerm+'' };
 
     $.ajax({
-      url: 'http://52.58.235.41/dr/drfotosamling/public/api//images/search?term=dronning',
+      url: 'http://nationalfilmografien.service.dfi.dk/movie.svc/list',
       data: data,
-      dataType: 'json',
+      dataType: 'xml',
       success: function(data) {
-        alert('Total results found (DR press): ' + data.numberOfResultsTotal);
+        alert('Total results found (Film): ' + $(data).length);
       //  $('#searchResult').val(data.results.collection);
-
 
       }
     });
 
+
+
+
+
 // DR pressefoto
 
 
-        var searchTerm = $('#keywords').val();
-        var data = { term: ''+searchTerm+'' };
+//    var searchTerm = $('#keywords').val();
+//    var data = { term: ''+searchTerm+'' };
 
-        $.ajax({
-          url: 'http://52.58.235.41/dr/drfotosamling/public/api//images/search',
-          data: data,
-          dataType: 'json',
-          success: function(data) {
-            alert('Total results found (DR press): ' + data.numberOfResultsTotal);
-          //  $('#searchResult').val(data.results.collection);
+//    $.ajax({
+//      url: 'http://52.58.235.41/dr/drfotosamling/public/api//images/search',
+//      data: data,
+//      dataType: 'json',
+//      success: function(data) {
+//        alert('Total results found (DR press): ' + data.lenght);
+      //  $('#searchResult').val(data.results.collection);
+
+      }
+    });
 
 
-          }
-        });
+
 
 
 
